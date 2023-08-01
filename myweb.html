@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUGATTI</title>
+    <link rel="icon" type="icon/x-image"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFxPyZUT8Rw9LOIAeDi4WM1E3pYVQVUksDow&usqp=CAU">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+          </style>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Poppins",sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(https://images.hdqwalls.com/wallpapers/bugatti-chiron-pur-sport-5k-os.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh;
+            transition: 0.5s;
+
+
+        }
+
+        Section:hover {
+            background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(https://newsroom.bugatti.com/_next/image?url=https%3A%2F%2Fnewsroomcdn.bugatti.com%2Fw_3200%2F79d18f28-86a8-4774-95e5-7912b1043339.jpg&w=1080&q=75);
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+        
+
+        .logo {
+            width: 120px;
+            height: 150px;
+            margin: 10px;
+            opacity: 1;
+
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: sticky;
+            top: 2px;
+        }
+
+        li,
+        a {
+            text-decoration: none;
+            color: black;
+            padding: 6px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        li,
+        a:hover {
+            color: red;
+        }
+
+        i {
+            color: black;
+            padding: 4px;
+            margin: 2px;
+        }
+
+
+
+        .sold {
+            float: right;
+            margin-top: -20%;
+            display: flex;
+            cursor: pointer;
+            transition: ease-in, 1s;
+        }
+
+        #about {
+            width: 40%;
+            margin: 40px;
+
+        }
+
+        span {
+            font-weight: 100;
+        }
+
+        header {
+            background-color: white;
+            box-shadow:5px 5px black;
+            position: sticky;
+            width: 100%;
+            height: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+
+        h1 {
+            text-align: center;
+            color: black;
+            padding: 5px;
+            margin: 10px;
+        }
+
+        #watch {
+            width: 150px;
+            height: 150px;
+            padding: 4px;
+            margin: auto;
+            display:flex;
+            place-items: center;
+            justify-content: center;
+
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 300px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(159, 47, 47, 0.2);
+            margin: 5px;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .flip-card-front {
+            background-color: #bbb;
+            color: black;
+        }
+
+        .flip-card-back {
+            background-color: rgb(96, 203, 238);
+            ;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-back:hover {
+            background-color: magenta;
+            cursor: pointer;
+            color: black;
+            transition: 1s;
+        }
+
+        h3 {
+            text-align: left;
+            margin: 5px;
+            padding: 4px;
+        }
+
+        footer {
+            background-color: white;
+        }
+
+        input[type=text],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+            color: black;
+        }
+
+        form {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            width: 500px;
+            margin: auto;
+        }
+
+        button {
+            background-color: red;
+            text-align: center;
+            color: white;
+            width: 100%;
+            padding: 10px;
+            word-spacing: 4px;
+            border: none;
+            border-radius: 5px;
+            transition: 0.5s;
+            box-shadow: 5px 5px  solid white;
+            position: relative;
+            left: 0;
+            bottom: 100;
+
+        }
+
+        button:hover {
+            background-color: white;
+            color: red;
+            word-spacing: 5px;
+            transition: 1s;
+
+        }
+
+        i:hover {
+            color: rgb(75, 75, 209);
+        }
+
+        .b {
+            padding: 5px;
+            margin: 5px;
+            float: right;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
+        .head{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 50px;
+
+        }
+        #img{
+            width: 300px;
+            height: 300px;
+            padding: 10px;
+            margin: 10px;
+            display: flex;  
+        align-items: center;
+        justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <header>
+            <img src="https://www.carlogos.org/logo/Bugatti-logo-1024x768.png" class="logo">
+            <div id="home">
+
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="slider.html">MODELS</a></li>
+                    <li><a href="slider.html">RACERS</a></li>
+                    <li><a href="#watch">CONTACT US</a></li>
+                </ul>
+        </header> <br>
+
+        <a href="slider.html" ><button type="button">DISCOVER MORE</button></a>
+    </section> <br>
+    <div id="about">
+
+        <h2> <span> About </span> Us</h2>
+        <p>The company also enjoyed great success in early Grand Prix motor racing: in 1929 a privately entered Bugatti
+            won the first ever Monaco Grand Prix. Racing success culminated with driver Jean-Pierre Wimille winning the
+            24 hours of Le Mans twice (in 1937 with Robert Benoist and 1939 with Pierre Veyron).
+
+            Bugatti cars were extremely successful in racing. The little Bugatti Type 10 swept the top four positions at
+            its first race. The 1924 Bugatti Type 35 is one of the most successful racing cars. The Type 35 was
+            developed by Bugatti with master engineer and racing driver Jean Chassagne who also drove it in the car's
+            first ever Grand Prix in 1924 Lyon.[3] Bugattis swept to victory in the Targa Florio for five years straight
+            from 1925 through 1929. Louis Chiron held the most podiums in Bugatti cars, and the modern marque revival
+            Bugatti Automobiles S.A.S. named the 1999 Bugatti 18/3 Chiron concept car in his honour. But it was the
+            final racing success at Le Mans that is most remembered—Jean-Pierre Wimille and Pierre Veyron won the 1939
+            race with just one car and meagre resources.</p>
+
+    </div>
+    <div class="sold">
+        <img
+            src="https://image.shutterstock.com/image-illustration/szczecinpolandjuly2020bugatti-chiron-on-white-background3d-260nw-1784301566.jpg">
+    </div> <br>
+    <br> <br> 
+    <h1>
+        BUGATTI UNIVERSE
+    </h1>
+    <br> <br> <br> <br>
+    <div id="watch">
+        <img src="https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/j/a/jacob-co-bugatti-chiron-tb-bu200-30-aa-aa-b-multiple-4.jpg" id="img">
+        <img src="https://imgd.aeplcdn.com/1200x900/cw/ec/19999/Bugatti-VGT-Front-view-57019.jpg?wm=0&t=110937487&t=110937487" id="img">
+        <img src="https://www.thesupercarblog.com/wp-content/uploads/2019/10/Formula-E-Gen2-Race-car-Bugatti.jpg" id="img">
+        <img src="https://cdn.motor1.com/images/mgl/2NANXn/s1/bugatti-bolide-final-production-form.webp" id="img">
+    </div>
+    <br> <br> <br>
+    <h1 style="margin-top: 10px; padding: 15px;"  >RAREST CAR EVER MADE </h1>
+<div class="head">
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://images.unsplash.com/photo-1562141960-c9a127257324?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnVnYXR0aSUyMGRpdm98ZW58MHx8MHx8fDA%3D&w=1000&q=80"
+                    style="width:350px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+                <h1>BUGATTI DIVO</h1>
+                <p>2 Fastest Car </p>
+                <p>Since 1972</p>
+                <p>The Bugatti Divo is a mid-engine track-focused sports car developed and manufactured by Bugatti Automobiles S.A.S. The car is named after French racing driver Albert Divo, who raced for Bugatti in the 1920s winning the Targa Florio race twice.</p>
+            </div>
+        </div>
+    </div>
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR457WK9OKY0ll76MYove7AiuMeBwHqbArMzA&usqp=CAU"
+                    style="width:350px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+                <h1>BUGATTI VERON</h1>
+                <p> Fastest Car </p>
+                <p>Since 1972</p>
+                <p>The Bugatti Veyron EB 16.4 is a mid-engine sports car, designed and developed in Germany by the Volkswagen Group and Bugatti and manufactured in Molsheim, France, by French automobile manufacturer Bugatti.</p>
+            </div>
+        </div>
+    </div>
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://stimg.cardekho.com/images/carexteriorimages/930x620/Bugatti/Chiron/8451/1633582433934/front-left-side-47.jpg"
+                    style="width:350px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+                <h1>BUGATTI CHIRON</h1>
+                <p>SPORTS </p>
+                <p>Since 1972</p>
+                <p>The Bugatti Chiron is a mid-engine two-seater sports car designed and developed in Germany by Bugatti Engineering GmbH[7] and manufactured in Molsheim, France.</p>
+            </div>
+        </div>
+    </div>
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://cdn.carbuzz.com/gallery-images/840x560/705000/200/705208.jpg"
+                    style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+                <h1>BUGATTI SPORT</h1>
+                <p>SPORTS </p>
+                <p>Since 1972</p>
+                <p>At the 2018 Geneva Motor Show, Bugatti unveiled the track focused version of the Chiron, named the Chiron Sport. Mechanically the car is identical to the regular version, generating 1,500 PS (1,105 kW; 1,480 hp) from a quad-turbocharged</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="b">
+        <!--embedded video-->
+        <iframe width="300" height="300" src="https://www.youtube.com/embed/PkkV1vLHUvQ"
+            title="BUGATTI Chiron 0-400-0 km/h in 42 seconds – A WORLD RECORD #IAA2017" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </div>
+
+
+    <h2>SELECT YOUR MODEL & SUBMIT</h2>
+    <form>
+        <div>
+            <form action="/action_page.php">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                <label for="lname">Model</label>
+                <select id="Model" name="Model">
+                    <option value="Chiron">Chiron</option>
+                    <option value="Veron">Veron</option>
+                    <option value="Bolide">Bolide</option>
+                    <option value="Divo">Divo</option>
+                </select>
+
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                </select>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </form>
+    <h2>FOLLOW US ON</h2>
+    <footer>
+        <a href="https://www.facebook.com/videos?campaign_id=14884913640&extra_1=s%7Cc%7C589460569900%7Cb%7Cfacebook%20log%20in%7C&placement=&creative=589460569900&keyword=facebook%20log%20in&partner_id=googlesem&extra_2=campaignid%3D14884913640%26adgroupid%3D128696221912%26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-1409266755%26loc_physical_ms%3D9303237%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=Cj0KCQjwhY-aBhCUARIsALNIC06ip3PtZsiC3GXGBesBfTGYPBf3RoHHarZDn0zKIZKbTgysAujWPKUaAsZPEALw_wcB"
+            target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://about.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://twitter.com/?lang=en" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://accounts.snapchat.com/accounts/login?continue=%2Faccounts%2Fsso%3Freferrer%3Dhttps%253A%252F%252Fweb.snapchat.com%252F%253Futm_source%253DGoogleSEM%2526utm_medium%253DPAIDUA%2526utm_campaign%253DIN_Web%2526utm_term%253Dbrand%2526utm_content%253DRSA%2526gclid%253DCj0KCQjwhY-aBhCUARIsALNIC040263R2VrEsGr3Yn5FszEdyMtow0rv_983En0GyDZln_dpIufRVY8aAsaUEALw_wcB%26client_id%3Dweb-calling-corp--prod"
+            target="_blank"><i class="fa-brands fa-square-snapchat"></i></a>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
